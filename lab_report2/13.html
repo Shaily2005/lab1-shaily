@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Array</title>
+</head>
+<body>
+    <h1>Join Array Elements into a String</h1>
+    <p>Enter an array (e.g., [1,2,3]):</p>
+    <input type="text" id="joinInput" placeholder="e.g., [1,2,3]">
+    <button onclick="joinArray()">Join</button>
+    <p id="result"></p>
+    <script>
+        function joinArray() {
+            const input = document.getElementById("joinInput").value;
+            try {
+                const array = JSON.parse(input);
+                if (!Array.isArray(array)) {
+                    document.getElementById("result").innerText = "Input is not an array.";
+                    return;
+                }
+                const joinedString = array.join(", ");
+                document.getElementById("result").innerText = `Joined string: ${joinedString}`;
+            } catch (error) {
+                document.getElementById("result").innerText = "Invalid input. Please enter a valid array.";
+            }
+        }
+    </script>
+</body>
+</html>

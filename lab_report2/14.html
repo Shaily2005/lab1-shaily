@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Array</title>
+</head>
+<body>
+    <h1>Sort Items in an Array</h1>
+    <p>Enter an array (e.g., [3,1,2]):</p>
+    <input type="text" id="sortInput" placeholder="e.g., [3,1,2]">
+    <button onclick="sortArray()">Sort</button>
+    <p id="result"></p>
+    <script>
+        function sortArray() {
+            const input = document.getElementById("sortInput").value;
+            try {
+                const array = JSON.parse(input);
+                if (!Array.isArray(array)) {
+                    document.getElementById("result").innerText = "Input is not an array.";
+                    return;
+                }
+                const sortedArray = array.sort((a, b) => a - b);
+                document.getElementById("result").innerText = `Sorted array: [${sortedArray}]`;
+            } catch (error) {
+                document.getElementById("result").innerText = "Invalid input. Please enter a valid array.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Number in Array</title>
+</head>
+<body>
+    <h1>Find the Largest Number</h1>
+    <form id="numberForm">
+        <label for="numbers">Enter numbers separated by commas:</label><br>
+        <input type="text" id="numbers" placeholder="e.g., 10, 20, 30, 40" required><br><br>
+        <button type="button" onclick="findLargest()">Find Largest</button>
+    </form>
+
+    <h2>Result</h2>
+    <p id="result"></p>
+
+    <script>
+        function findLargest() {
+            const input = document.getElementById('numbers').value;
+            if (!input) {
+                document.getElementById('result').innerText = "Please enter some numbers.";
+                return;
+            }
+
+            const numArray = input.split(',').map(Number);
+
+            
+            if (numArray.some(isNaN)) {
+                document.getElementById('result').innerText = "Invalid input! Please enter only numbers separated by commas.";
+                return;
+            }
+
+          
+            const largest = Math.max(...numArray);
+
+            
+            document.getElementById('result').innerText = `The largest number is: ${largest}`;
+        }
+    </script>
+</body>
+</html>

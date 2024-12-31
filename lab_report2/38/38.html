@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph Manipulation</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #change-bg { background-color: blue; }
+        #change-paragraph-bg { background-color: orange; }
+        #hide-paragraph { background-color: yellow; color: black; }
+        #show-paragraph { background-color: green; }
+        #increase-font { background-color: purple; }
+        #decrease-font { background-color: teal; }
+        #reset-font { background-color: red; }
+        #change-text-color { background-color: darkblue; }
+
+        p {
+            font-size: 12pt;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="change-bg">Change Background</button>
+        <button id="change-paragraph-bg">Change Paragraph Background</button>
+        <button id="hide-paragraph">Hide Paragraph</button>
+        <button id="show-paragraph">Show Paragraph</button>
+        <button id="increase-font">Increase Font Size by 2pt</button>
+        <button id="decrease-font">Decrease Font Size by 2pt</button>
+        <button id="reset-font">Reset Font to 12pt</button>
+        <button id="change-text-color">Change Text Color</button>
+    </div>
+    <p id="paragraph">I am Arpanan Kumal. Click the buttons above to manipulate me!</p>
+
+    <script src="38.js"></script>
+</body>
+</html>
