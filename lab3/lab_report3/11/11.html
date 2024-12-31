@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display BCA Description</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                }
+            #content {
+                margin-top: 20px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                background-color: #f9f9f9;
+                }
+            button {
+                padding: 10px 20px;
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                    }
+            button:hover {
+                background-color: #0056b3;
+                    }
+        </style>
+</head>
+<body>
+    <h1>BCA Description</h1>
+    <button id="loadButton">Load BCA Description</button>
+    <div id="content">
+    </div>
+
+    <script>
+    document.getElementById("loadButton").addEventListener("click", function () {
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "bca.txt", true);
+
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+
+            document.getElementById("content").innerText = xhr.responseText;
+        } else {
+            document.getElementById("content").innerText =
+            "Error: Unable to load content.";
+        }
+    };
+
+
+    xhr.onerror = function () {
+        document.getElementById("content").innerText =
+            "Error: Unable to connect to the server.";
+    };
+
+
+        xhr.send();
+    });
+    </script>
+</body>
+</html>
