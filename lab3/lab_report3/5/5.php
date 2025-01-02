@@ -74,9 +74,9 @@ class User implements HasInfo
 }
 
 
-$address = new Address("lambagar", 123, "Kathmandu <br>" );
-$phone = new Phone("+977", "9845677865");
-$user = new User("Arpana", "Kumal<br>", $address, $phone);
+$address = new Address("samakhushi", 123, "Kathmandu <br>" );
+$phone = new Phone("+977", "9840863731");
+$user = new User("Shaily", "Mukarung<br>", $address, $phone);
 
 
 echo $user->getInfo();
